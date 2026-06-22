@@ -17,7 +17,8 @@ final class StockQuantity extends Equatable {
 
   static const zero = StockQuantity._(0);
 
-  StockQuantity add(StockQuantity other) => StockQuantity._(value + other.value);
+  StockQuantity add(StockQuantity other) =>
+      StockQuantity._(value + other.value);
 
   Either<InsufficientStockFailure, StockQuantity> subtract(
     StockQuantity other,

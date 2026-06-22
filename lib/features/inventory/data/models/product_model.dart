@@ -50,7 +50,8 @@ final class ProductModel extends Equatable {
       sku: json['sku'] as String,
       barcode: json['barcode'] as String?,
       categoryId: json['categoryId'] as String?,
-      currentStock: json['currentStock'] as int? ?? json['quantity'] as int? ?? 0,
+      currentStock:
+          json['currentStock'] as int? ?? json['quantity'] as int? ?? 0,
       minimumStock: json['minimumStock'] as int? ?? 0,
       costPriceCents: json['costPriceCents'] as int? ?? 0,
       salePriceCents:

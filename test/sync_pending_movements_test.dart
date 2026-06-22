@@ -62,8 +62,7 @@ void main() {
   });
 
   test('wraps an unexpected exception as a ServerFailure', () async {
-    when(() => repository.getPendingSyncCount())
-        .thenThrow(Exception('boom'));
+    when(() => repository.getPendingSyncCount()).thenThrow(Exception('boom'));
 
     final result = await useCase(const NoParams());
 

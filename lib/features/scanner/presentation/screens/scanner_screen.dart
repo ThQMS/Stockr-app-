@@ -229,7 +229,9 @@ class _MovementBottomSheetState extends ConsumerState<_MovementBottomSheet> {
               onPressed: movementState.isLoading
                   ? null
                   : () async {
-                      await ref.read(movementNotifierProvider.notifier).register(
+                      await ref
+                          .read(movementNotifierProvider.notifier)
+                          .register(
                             RegisterMovementParams(
                               productId: widget.product.id,
                               workspaceId: widget.product.workspaceId,
