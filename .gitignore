@@ -1,0 +1,41 @@
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+coverage/
+pubspec.lock
+
+android/.gradle/
+android/local.properties
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Pods/
+macos/Pods/
+
+*.iml
+.idea/
+.vscode/
+
+# Android signing / secrets — must never be committed
+*.jks
+*.keystore
+key.properties
+android/key.properties
+**/*.env
+.env
+.env.*
+secrets.dart
+lib/**/secrets.dart
+
+# Generated code (produced by build_runner; regenerated in CI)
+*.g.dart
+*.config.dart
+*.freezed.dart
+*.mocks.dart
+
+# OS noise
+.DS_Store
+Thumbs.db

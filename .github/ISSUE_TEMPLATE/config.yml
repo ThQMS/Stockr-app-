@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 Security report
+    url: https://github.com/ThQMS/Stockr-app-/security/advisories/new
+    about: Please report vulnerabilities privately, not as public issues.
+  - name: 🛠️ Backend (Stockr API)
+    url: https://github.com/ThQMS/Stockr-api/issues
+    about: For issues with the API, open them in the backend repository.
