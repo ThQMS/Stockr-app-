@@ -12,6 +12,6 @@ final class ConnectivityPlusNetworkInfo implements NetworkInfo {
   @override
   Future<bool> get isConnected async {
     final result = await _connectivity.checkConnectivity();
-    return result != ConnectivityResult.none;
+    return result.any((status) => status != ConnectivityResult.none);
   }
 }

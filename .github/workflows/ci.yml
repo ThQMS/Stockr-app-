@@ -8,7 +8,7 @@ on:
 
 # Pinned for reproducibility — bump deliberately.
 env:
-  FLUTTER_VERSION: "3.22.0"
+  FLUTTER_VERSION: "3.32.0"
 
 jobs:
   analyze-and-test:

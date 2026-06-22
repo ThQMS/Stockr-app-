@@ -194,12 +194,12 @@ class _SkeletonCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return const Card(
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             _ShimmerBox(width: 180, height: 18),
             SizedBox(height: 10),
             _ShimmerBox(width: 96, height: 14),

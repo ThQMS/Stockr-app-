@@ -10,8 +10,8 @@
   <a href="https://github.com/ThQMS/Stockr-app-/actions/workflows/ci.yml">
     <img alt="CI" src="https://github.com/ThQMS/Stockr-app-/actions/workflows/ci.yml/badge.svg">
   </a>
-  <img alt="Flutter" src="https://img.shields.io/badge/Flutter-3.22%2B-02569B?logo=flutter&logoColor=white">
-  <img alt="Dart" src="https://img.shields.io/badge/Dart-3.3%2B-0175C2?logo=dart&logoColor=white">
+  <img alt="Flutter" src="https://img.shields.io/badge/Flutter-3.27%2B-02569B?logo=flutter&logoColor=white">
+  <img alt="Dart" src="https://img.shields.io/badge/Dart-3.6%2B-0175C2?logo=dart&logoColor=white">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg"></a>
 </p>
 
@@ -55,7 +55,7 @@ Stockr is split into two repositories that work together:
 
 ## 🚀 Getting started
 
-Requirements: **Dart 3.3+** and **Flutter 3.22+**.
+Requirements: **Dart 3.6+** and **Flutter 3.27+**.
 
 ```sh
 # 1. Install dependencies

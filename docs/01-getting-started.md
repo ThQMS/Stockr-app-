@@ -2,8 +2,8 @@
 
 ## Prerequisites
 
-- **Flutter** 3.22 or newer (`flutter --version`)
-- **Dart** 3.3 or newer (bundled with Flutter)
+- **Flutter** 3.27 or newer (`flutter --version`)
+- **Dart** 3.6 or newer (bundled with Flutter)
 - A device or emulator (Android/iOS)
 - A running [Stockr API](https://github.com/ThQMS/Stockr-api) instance (or a deployed URL)
 

@@ -1,0 +1,86 @@
+name: Release
+
+# Builds the release APK and publishes a GitHub Release with the artifact
+# attached. Triggers when a v* tag is pushed, or manually via the Actions tab.
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to release (e.g. v1.0.0). Must already exist."
+        required: true
+
+permissions:
+  contents: write
+
+env:
+  FLUTTER_VERSION: "3.32.0"
+
+jobs:
+  release:
+    name: Build APK & publish release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag || github.ref }}
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate code (Drift / Riverpod / Injectable)
+        run: dart run build_runner build --delete-conflicting-outputs
+
+      - name: Build release APKs (per ABI)
+        run: >-
+          flutter build apk --release --split-per-abi
+          --dart-define=API_BASE_URL=${{ vars.API_BASE_URL || 'https://api.example.com' }}
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.tag || github.ref_name }}
+          name: ${{ github.event.inputs.tag || github.ref_name }} — Offline-first inventory
+          body: |
+            # 📦 Stockr App ${{ github.event.inputs.tag || github.ref_name }}
+
+            First public release of the Stockr mobile client — an **offline-first**
+            inventory and stock-movement app built with Flutter.
+
+            ## ✨ Highlights
+            - 📷 **Scan-first UX** — QR / barcode scanning with `mobile_scanner`
+            - 🗄️ **Local-first persistence** — products & movements stored on-device with Drift (SQLite)
+            - 🔁 **Background sync** — writes queued in a `PendingSyncTable` and replayed to the
+              [Stockr API](https://github.com/ThQMS/Stockr-api) when connectivity returns, with
+              client-generated IDs for idempotency
+            - 🧱 **Clean Architecture by feature** — typed failures with `fpdart`, Riverpod state,
+              go_router navigation, get_it/injectable DI
+            - 📊 Inventory reports with `fl_chart`
+
+            ## 📱 Try it
+            Download the `arm64-v8a` APK below (covers most modern Android phones) and install it.
+            The app expects a running [Stockr API](https://github.com/ThQMS/Stockr-api) instance.
+
+            ## 🧰 Tech stack
+            Flutter 3.27 · Dart 3.6 · Drift · Riverpod · Dio · go_router · fpdart
+
+            **Full Changelog:** https://github.com/ThQMS/Stockr-app-/blob/main/CHANGELOG.md
+          files: build/app/outputs/flutter-apk/*.apk
+          draft: false
+          prerelease: false
