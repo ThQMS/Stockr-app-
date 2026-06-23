@@ -6,10 +6,6 @@ on:
   pull_request:
     branches: [main]
 
-# Pinned for reproducibility — bump deliberately.
-env:
-  FLUTTER_VERSION: "3.32.0"
-
 jobs:
   analyze-and-test:
     name: Analyze & Test
@@ -21,7 +17,8 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
+          # Package versions are pinned via the committed pubspec.lock, so the
+          # latest stable SDK gives reproducible analysis without a brittle pin.
           channel: stable
           cache: true
 
@@ -57,7 +54,8 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
+          # Package versions are pinned via the committed pubspec.lock, so the
+          # latest stable SDK gives reproducible analysis without a brittle pin.
           channel: stable
           cache: true
 

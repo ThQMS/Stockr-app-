@@ -15,9 +15,6 @@ on:
 permissions:
   contents: write
 
-env:
-  FLUTTER_VERSION: "3.32.0"
-
 jobs:
   release:
     name: Build APK & publish release
@@ -37,7 +34,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: ${{ env.FLUTTER_VERSION }}
+          # Package versions are pinned via the committed pubspec.lock.
           channel: stable
           cache: true
 

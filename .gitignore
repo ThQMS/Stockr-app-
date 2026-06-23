@@ -6,7 +6,7 @@
 .pub/
 build/
 coverage/
-pubspec.lock
+# pubspec.lock IS committed for reproducible builds (this is an app, not a package).
 
 android/.gradle/
 android/local.properties
