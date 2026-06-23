@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:fpdart/fpdart.dart';
-import 'package:injectable/injectable.dart';
 
 import '../../../../core/error/exceptions.dart';
 import '../../../../core/error/failures.dart';
@@ -12,7 +11,6 @@ import '../../domain/repositories/product_repository.dart';
 import '../datasources/product_local_datasource.dart';
 import '../datasources/product_remote_ds.dart';
 
-@Injectable(as: ProductRepository)
 class ProductRepositoryImpl implements ProductRepository {
   const ProductRepositoryImpl({
     required ProductRemoteDataSource remote,

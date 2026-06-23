@@ -32,10 +32,9 @@ lib/**/secrets.dart
 
 # Generated code (produced by build_runner; regenerated in CI)
 *.g.dart
+*.config.dart
 *.freezed.dart
 *.mocks.dart
-# NOTE: lib/core/di/injection.config.dart is hand-written DI wiring (no
-# @InjectableInit annotations exist), so it IS committed — not generated.
 
 # OS noise
 .DS_Store
