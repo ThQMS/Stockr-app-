@@ -23,7 +23,7 @@ dependencies:
   drift_flutter: ^0.2.0
   dio: ^5.5.0
   fpdart: ^1.1.0
-  mobile_scanner: ^5.2.0
+  mobile_scanner: ^7.2.0
   flutter_secure_storage: ^9.2.0
   shared_preferences: ^2.3.0
   fl_chart: ^0.68.0
