@@ -62,9 +62,10 @@ providers expose use-case results to the widgets.
 
 ## Dependency injection
 
-`get_it` + `injectable` wire concrete implementations to interfaces.
-`configureDependencies()` runs at startup before `runApp`. Generated wiring
-lives in `injection.config.dart` (not committed; produced by `build_runner`).
+`get_it` is used as a service locator. `configureDependencies()` runs at startup
+before `runApp`, and the wiring is declared manually in
+[`lib/core/di/injection_container.dart`](../lib/core/di/injection_container.dart)
+(plain, committed source — there is no annotation-based codegen here).
 
 ## Navigation
 

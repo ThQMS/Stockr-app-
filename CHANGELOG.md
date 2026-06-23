@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Background synchronization with the [Stockr API](https://github.com/ThQMS/Stockr-api)
   (`SyncPendingMovementsUseCase`), with client-generated ids for idempotency.
 - Typed failures with `fpdart` `Either`; Riverpod state management; `go_router`
-  navigation; `get_it` + `injectable` dependency injection.
+  navigation; `get_it` service locator for dependency injection.
 - Domain value objects: `ProductSku`, `StockQuantity`, `Money`.
 - Inventory reports with `fl_chart`.
 - Project documentation under `docs/`, CI pipeline, and community files.

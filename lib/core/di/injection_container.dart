@@ -26,7 +26,7 @@ import '../network/interceptors/connectivity_interceptor.dart';
 import '../network/interceptors/workspace_interceptor.dart';
 import '../network/network_info.dart';
 
-extension GetItInjectableX on GetIt {
+extension GetItInjectionX on GetIt {
   Future<GetIt> init() async {
     final preferences = await SharedPreferences.getInstance();
 

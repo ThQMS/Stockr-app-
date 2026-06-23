@@ -15,7 +15,7 @@ flutter doctor
 
 ## Install & generate code
 
-This scaffold does **not** commit generated files (Drift, Riverpod, Injectable).
+This scaffold does **not** commit generated files (Drift, Riverpod).
 Generate them after cloning:
 
 ```sh

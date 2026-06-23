@@ -41,7 +41,7 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Generate code (Drift / Riverpod / Injectable)
+      - name: Generate code (Drift / Riverpod)
         run: dart run build_runner build --delete-conflicting-outputs
 
       - name: Build release APKs (per ABI)
@@ -67,7 +67,7 @@ jobs:
               [Stockr API](https://github.com/ThQMS/Stockr-api) when connectivity returns, with
               client-generated IDs for idempotency
             - 🧱 **Clean Architecture by feature** — typed failures with `fpdart`, Riverpod state,
-              go_router navigation, get_it/injectable DI
+              go_router navigation, get_it DI
             - 📊 Inventory reports with `fl_chart`
 
             ## 📱 Try it
