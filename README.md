@@ -210,15 +210,22 @@ Diagrama ER completo e notas de design em [docs/04-data-layer.md](docs/04-data-l
 Requisitos: **Dart 3.6+** e **Flutter 3.27+**.
 
 ```sh
-# 1. Instalar dependências
+# 1. Gerar as pastas de plataforma (android/ etc. — não versionadas)
+flutter create --platforms=android .
+
+# 2. Instalar dependências
 flutter pub get
 
-# 2. Gerar o código (Drift / Riverpod)
+# 3. Gerar o código (Drift / Riverpod)
 dart run build_runner build --delete-conflicting-outputs
 
-# 3. Rodar, apontando para a sua instância do backend
+# 4. Rodar, apontando para a sua instância do backend
 flutter run --dart-define=API_BASE_URL=http://10.0.2.2:8080
 ```
+
+> As pastas de plataforma (`android/`, `ios/`...) não são versionadas — são
+> geradas pelo `flutter create`, mantendo o Gradle sempre alinhado ao SDK que
+> faz o build (o CI faz isso automaticamente).
 
 > `10.0.2.2` é a máquina host vista de dentro do emulador Android. Para um aparelho
 > físico, use o IP da sua máquina na LAN ou a URL de uma API publicada.

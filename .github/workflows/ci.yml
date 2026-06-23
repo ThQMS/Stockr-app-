@@ -59,6 +59,11 @@ jobs:
           channel: stable
           cache: true
 
+      # Regenerate the Android project with the runner's own Flutter so the
+      # Gradle setup always matches the SDK doing the build.
+      - name: Generate Android platform
+        run: flutter create --platforms=android --org com.thqms --project-name stockr_app .
+
       - name: Install dependencies
         run: flutter pub get
 

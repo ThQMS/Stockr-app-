@@ -38,6 +38,12 @@ jobs:
           channel: stable
           cache: true
 
+      # Platform folders are regenerated with the runner's own Flutter so the
+      # Gradle project always matches the SDK doing the build (avoids drift
+      # between a locally-generated android/ and the CI Flutter).
+      - name: Generate Android platform
+        run: flutter create --platforms=android --org com.thqms --project-name stockr_app .
+
       - name: Install dependencies
         run: flutter pub get
 

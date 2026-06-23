@@ -15,13 +15,19 @@ flutter doctor
 
 ## Install & generate code
 
-This scaffold does **not** commit generated files (Drift, Riverpod).
-Generate them after cloning:
+This scaffold does **not** commit generated files (Drift, Riverpod) nor the
+platform folders (`android/`, `ios/`). Generate them after cloning:
 
 ```sh
+# Generate the native platform project(s) with your own Flutter SDK
+flutter create --platforms=android .
+
 flutter pub get
 dart run build_runner build --delete-conflicting-outputs
 ```
+
+> Keeping platform folders out of version control guarantees the Gradle setup
+> always matches the Flutter SDK that builds the app. CI regenerates them too.
 
 Use `watch` instead of `build` while developing:
 
